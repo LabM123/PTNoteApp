@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 import addNoteIcon from '../../Assets/addNoteIcon.svg'
+import closeButton from '../../Assets/closeButton.svg'
 import NoteCard from '../../Components/NoteCard/NoteCard'
 
 export default function Dashboard(){
@@ -99,6 +100,8 @@ export default function Dashboard(){
                 ?
                 <div className={styles['NewNoteModal']}>
                     <form onSubmit={handleSubmitNewNote}>
+                        <img src={closeButton} alt=""  onClick={() => {setIsModalOpen(!isModalOpen)}}/>
+                        <button className={styles['ExitButton']}></button>
                         <div className={styles['label']}>
                             <label htmlFor="title">Titulo</label>
                             <input type="text" name='title' id='title' value={newNote.title} onChange={handleChangeNewNote}/>

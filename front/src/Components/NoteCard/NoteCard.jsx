@@ -46,6 +46,7 @@ export default function NoteCard({props}){
     }
 
     const handleDeleteNote = () => {
+        console.log('xd')
         axios.delete(`${import.meta.env.VITE_API_URL}/notes/deleteNote/${props._id}`)
         .then(() => {
             axios.get(`${import.meta.env.VITE_API_URL}/users/${NoteAppUser._id}`)
@@ -73,14 +74,14 @@ export default function NoteCard({props}){
                     isEditable
                     ?
                     <>
-                    <input type="text" value={newNote.title} name='title' id='title' onChange={handleChange}/>
-                    <input type="text" value={newNote.content} name='content' id='content' onChange={handleChange}/>
-                    <button onClick={handleSubmitEditNote}>Enviar</button>
+                        <input type="text" value={newNote.title} name='title' id='title' onChange={handleChange}/>
+                        <input type="text" value={newNote.content} name='content' id='content' onChange={handleChange}/>
+                        <button onClick={handleSubmitEditNote}>Enviar</button>
                     </>
                     :
                     <>
-                    <p>{props.title}</p>
-                    <p>{props.content}</p>
+                        <p>{props.title}</p>
+                        <p>{props.content}</p>
                     </>
                 }
             </div>
