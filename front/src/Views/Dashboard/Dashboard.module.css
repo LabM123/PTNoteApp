@@ -1,0 +1,75 @@
+.body{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(28, 39, 39);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    & .NavBar{
+        width: 100%;
+        height: 3rem;
+        background-color: rgb(66, 66, 66);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        & button{
+            align-self: flex-end;
+            padding: .5rem;
+            border-radius: .35rem;
+            outline: none;
+            border: none;
+            background-color: red;
+            color: white;
+            font-weight: bolder;
+            transition: all 0.3s ease-in-out;
+        }
+        & button:hover{
+            background-color: rgb(192, 0, 0);
+            cursor: pointer;
+        }
+    }
+    & .AddNoteSection{
+        margin: 2rem;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border: solid 1px gray;
+        border-radius: 2rem;
+        transition: all 0.3s ease-in-out;
+        & img{
+            max-width: 5rem;
+        }
+    }
+    & .AddNoteSection:hover{
+        background-color: rgb(53, 52, 52);
+        cursor: pointer;
+    }
+    & .NotesSection{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4rem;
+    }
+    & .NewNoteModal{
+        background-color: rgba(0, 0, 0, 0.466);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        & form{
+            background-color: #fff;
+            color: black;
+            padding: 3rem;
+            border-radius: 2rem;
+        }
+    }
+}
