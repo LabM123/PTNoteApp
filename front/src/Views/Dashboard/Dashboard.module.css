@@ -71,9 +71,15 @@
         & form{
             background-color: #fff;
             color: black;
-            padding: 7rem;
             border-radius: 2rem;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            min-height: 50vh;
+            gap: 3rem;
             & img{
                 max-width: 5rem;
                 top: .5rem;
@@ -82,6 +88,33 @@
             }
             & img:hover{
                 cursor: pointer
+            }
+            & .label{
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+                & input, textarea{
+                    min-width: 70%;
+                    padding: .25rem;
+                    border-radius: .5rem;
+                    border: solid 1px black;
+                }
+                textarea{
+                    height: 8rem;
+                    resize: none;
+                }
+            }
+            & button{
+                padding: .5rem 1rem;
+                border: none;
+                border-radius: .5rem;
+                background-color: rgb(80, 80, 241);
+                color: white;
+                transition: all 0.3s ease-in-out;
+            }
+            & button:hover{
+                background-color: rgb(54, 54, 253);
+                cursor: pointer;
             }
         }
     }

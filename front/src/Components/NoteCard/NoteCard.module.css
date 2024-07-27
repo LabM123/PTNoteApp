@@ -24,5 +24,33 @@
     }
     & .NoteSection{
         text-align: center;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & .NoteTitle{
+            font-size: 1.2rem;
+            color: rgb(248, 248, 152);
+        }
+        & input{
+            margin: .5rem;
+            padding: .25rem;
+            border-radius: .5rem;
+            min-width: 100%;
+        }
+        & button{
+            margin-top: .5rem;
+            padding: .5rem 1rem;
+            border: none;
+            border-radius: .5rem;
+            background-color: rgb(80, 80, 241);
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        & button:hover{
+            background-color: rgb(54, 54, 253);
+            cursor: pointer;
+        }
     }
 }

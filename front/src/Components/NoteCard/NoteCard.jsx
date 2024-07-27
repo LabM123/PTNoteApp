@@ -33,7 +33,8 @@ export default function NoteCard({props}){
                 axios.get(`${import.meta.env.VITE_API_URL}/users/${NoteAppUser._id}`)
                 .then(response => {
                     localStorage.setItem('NoteAppUser',JSON.stringify(response.data))
-                    navigate('/dashboard')
+                    // navigate('/dashboard')
+                    window.location.reload()
                 })
                 .catch(error => {
                     Swal.fire({title: 'Oops...', text: error.response.data.message, icon: 'error'})
@@ -52,7 +53,8 @@ export default function NoteCard({props}){
             axios.get(`${import.meta.env.VITE_API_URL}/users/${NoteAppUser._id}`)
             .then(response => {
                 localStorage.setItem('NoteAppUser',JSON.stringify(response.data))
-                navigate('/dashboard')
+                // navigate('/dashboard')
+                window.location.reload()
             })
             .catch(error => {
                 Swal.fire({title: 'Oops...', text: error.response.data.message, icon: 'error'})
@@ -67,7 +69,7 @@ export default function NoteCard({props}){
         <div className={styles['CardBody']}>
             <div className={styles['IconSection']}>
                 <img src={editNoteIcon} alt="" onClick={() => {setIsEditable(!isEditable)}}/>
-                <img src={deleteNoteIcon} alt="" onClick={() => {handleDeleteNote}}/>
+                <img src={deleteNoteIcon} alt="" onClick={() => {handleDeleteNote()}}/>
             </div>
             <div className={styles['NoteSection']}>
                 {
@@ -80,8 +82,8 @@ export default function NoteCard({props}){
                     </>
                     :
                     <>
-                        <p>{props.title}</p>
-                        <p>{props.content}</p>
+                        <p className={styles['NoteTitle']}>{props.title}</p>
+                        <p className={styles['NoteContent']}>{props.content}</p>
                     </>
                 }
             </div>

@@ -23,5 +23,32 @@
             /* padding: 1.5rem; */
             padding-top: 0;
         }
+        & .label{
+            min-width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & input{
+                min-width: 50%;
+                padding: .25rem;
+                border-radius: .5rem;
+            }
+        }
+        & button{
+            padding: .5rem 1rem;
+            border: none;
+            border-radius: .5rem;
+            background-color: rgb(80, 80, 241);
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        & button:hover{
+            background-color: rgb(54, 54, 253);
+            cursor: pointer;
+        }
+        & .register-div{
+            display: flex;
+            gap: .5rem;
+        }
     }
 }

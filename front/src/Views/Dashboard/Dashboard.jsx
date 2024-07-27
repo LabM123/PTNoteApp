@@ -13,7 +13,6 @@ export default function Dashboard(){
     const navigate = useNavigate()
 
     useEffect(()=>{
-        console.log(NoteAppUser) // TEMPORAL
         document.title = 'NoteApp | Dashboard'
         if(!NoteAppUser){
             Swal.fire({
@@ -33,7 +32,7 @@ export default function Dashboard(){
         }
     }, [NoteAppUser, navigate])
 
-    const [allNotes, setAllNotes] = useState(NoteAppUser.notes)
+    const [allNotes, setAllNotes] = useState(NoteAppUser?.notes)
 
     const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -90,7 +89,7 @@ export default function Dashboard(){
             </div>
             <div className={styles['NotesSection']}>
                 {
-                    allNotes.map(note => {
+                    allNotes?.map(note => {
                         return <NoteCard props={note}/>
                     })
                 }
@@ -101,7 +100,6 @@ export default function Dashboard(){
                 <div className={styles['NewNoteModal']}>
                     <form onSubmit={handleSubmitNewNote}>
                         <img src={closeButton} alt=""  onClick={() => {setIsModalOpen(!isModalOpen)}}/>
-                        <button className={styles['ExitButton']}></button>
                         <div className={styles['label']}>
                             <label htmlFor="title">Titulo</label>
                             <input type="text" name='title' id='title' value={newNote.title} onChange={handleChangeNewNote}/>
